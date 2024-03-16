@@ -4,8 +4,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>DnD</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="logic.js"></script>
+
+
 </head>
 <body>
 
@@ -36,11 +36,84 @@
 		<img id="drag7" src="https://upload.wikimedia.org/wikipedia/sco/thumb/9/9f/Twitter_bird_logo_2012.svg/1200px-Twitter_bird_logo_2012.svg.png" draggable="true" ondragstart="drag(event)"  height="100%">
 		<img id="drag8" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png" draggable="true" ondragstart="drag(event)"  height="100%">
 		<img id="drag9" src="https://cdn.worldvectorlogo.com/logos/tiktok-logo-2--1.svg" draggable="true" ondragstart="drag(event)"  height="100%">
-		<img id="drag10" src="https://www.iconheaven.com/download/13/png/tumblr_logo_2020512.png" draggable="true" ondragstart="drag(event)"  height="100%">
-
+		<img id="drag10" src="https://m.media-amazon.com/images/M/MV5BZjkwMzlhZDktYjU2NC00OWI3LTgxMmItOTVmNGMxZWQ0Y2Y3XkEyXkFqcGdeQXVyNjc1MjM1MzI@._V1_.jpg" draggable="true" ondragstart="drag(event)"  height="100%">
 		
-
 	</div>
+
+	<style>
+		body {
+			background-color: black;
+		}
+		.list {
+			border: 2px solid black;
+
+			width: 93%;
+			height: 10%;
+			float: right;
+			background-color: #1c1c1b;
+		}
+
+		.letter {
+			border: 2px solid black;
+			width: 7%;
+			height: 10%;
+
+			text-align: center;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		.letter.s {
+			background-color: #ed6161;
+		}
+
+		.letter.a {
+			background-color: #f5a647;
+		}
+
+		.letter.b {
+			background-color: #eddc6d;
+		}
+
+		.letter.c {
+			background-color: #a5ed74;
+		}
+
+		.letter.d {
+			background-color: #58cded;
+		}
+
+		.letter.e {
+			background-color: #7841d1;
+		}
+
+		.letter.f {
+			background-color: #e652eb;
+		}
+
+		.deposit {
+			border: 2px solid black;
+			left: 0;
+			height: 23%;
+		}
+	</style>
+
+	<script>
+		function allowDrop(ev) {
+			ev.preventDefault();
+		}
+		
+		function drag(ev) {
+			ev.dataTransfer.setData("text", ev.target.id);
+		}
+		
+		function drop(ev) {
+			ev.preventDefault();
+			var data = ev.dataTransfer.getData("text");
+
+			ev.target.appendChild(document.getElementById(data));
+		}
+
+	</script>
 
 </body>
 </html>
